@@ -649,26 +649,8 @@ const refill=()=>{
                     <div>
                       <input
                         type="radio"
-                        value="100"
-                        {...register("Membershipscheme")}
+                        value="300"
                         defaultChecked
-                      />
-                      <label for="huey">100</label>
-                    </div>
-
-                    <div>
-                      <input
-                        type="radio"
-                        value="200"
-                        {...register("Membershipscheme")}
-                      />
-                      <label for="huey">200</label>
-                    </div>
-
-                    <div>
-                      <input
-                        type="radio"
-                        value="500"
                         {...register("Membershipscheme")}
                       />
                       <label for="dewey">300</label>
@@ -700,10 +682,18 @@ const refill=()=>{
                     <div>
                       <input
                         type="radio"
+                        value="1000"
+                        {...register("Membershipscheme")}
+                      />
+                      <label for="dewey">2000</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
                         value="More than 1000"
                         {...register("Membershipscheme")}
                       />
-                      <label for="dewey">More than 1000</label>
+                      <label for="dewey">More than 2000</label>
                     </div>
                   </fieldset>
                 </div>

@@ -127,9 +127,9 @@ const Home = () => {
               <div className="logosection">
                 <img src="/img/trustlogo.jpg" alt="" />
                 <div className="social">
-                <FacebookIcon style={{color:'blue',width:"50px", height:'80px'}} />
+               <a href="https://m.facebook.com/story.php?story_fbid=pfbid0pJuHuoteFrkLjvuBxTmjYo2enti6HF63wRUrZCjkbJYF7YYxqvD25AtF4WuZP9ULl&id=100161532815257&mibextid=Nif5oz" target="_blank" rel="noopener noreferrer"> <FacebookIcon style={{color:'blue',width:"50px", height:'80px'}} /></a>
                 <InstagramIcon style={{color:'purple',height:"80px",width:"50px"}} />
-                <YouTubeIcon style={{color:'red',height:'80px',width:"50px"}} />
+                <a href="https://www.youtube.com/@thelifecaretrust" target="_blank" rel="noopener noreferrer"> <YouTubeIcon style={{color:'red',height:'80px',width:"50px"}} /></a>
               </div>
              
         
@@ -141,7 +141,7 @@ const Home = () => {
               <p className="detail">Kamarbari road </p>
               <p className="detail">Newtown ,Kolkata 7000156</p>
               <p className="head"><PhoneAndroidIcon/> Phone</p>
-              <p className="detail">7407051753(Salahuddin, Manager , The life are trust)</p>
+              <p className="detail">7407051753(Obaidur Rahaman, Manager , The life are trust)</p>
               <p className="head"><EmailIcon/> Email</p>
               <p className="detail">Obaid@gmail.com</p>
             </div>
