@@ -1,38 +1,544 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lato&family=Libre+Franklin&family=Montserrat&family=PT+Sans+Narrow:wght@700&family=Playfair+Display:wght@700&family=Poppins:ital,wght@0,400;0,500;0,700;1,200&family=Sacramento&family=Titillium+Web:wght@600&family=Vollkorn&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=PT+Sans+Narrow:wght@700&family=Playfair+Display:wght@700&family=Poppins:ital,wght@0,400;0,500;0,700;1,200&family=Sacramento&family=Titillium+Web:wght@600&display=swap'); */
+
+body{
+background-color: #76B854;
+overflow:initial !important;
+
+}
+p{
+   font-family: 'Work Sans', sans-serif;
+}
+a{
+   font-family: 'Merriweather', serif;
+}
+.headline{
+
+ display: flex;
+ justify-content: center;
+
+}
+.headline img{
+  height: 100px;
+  width: 50vw;
+}
+.headline h1{
+  color: #027A80;
+  font-size: 48px;
+  font-family: 'Audiowide', cursive;
+}
+.headline h3{
+  color: black;
+  font-family:'Sacramento', cursive;
+  font-size: 36px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+}
+nav{
+   
+ 
+   height: 80px;
+}
+label.logo{
+   color: white;
+   font-size: 35px;
+   line-height: 80px;
+
+   padding: 0px 100px;
+}
+nav ul{
+   display: flex;
+   justify-content: center;
+   margin-right: 20px;
+   list-style: none;
+}
+nav ul li{
+   display: inline-block;
+   line-height: 80px;
+   margin: 0px 5px;
+   color:white;
+   font-size: 14px;
+   text-transform: uppercase;
+  cursor: pointer;
+}
+nav ul li a{
+   color: white;
+   text-decoration: none;
+   font-family: 'Lato', sans-serif;
+   font-weight: bold;
+}
+nav ul li a{
+ 
+  padding: 5px;
+  border-radius: 5px;
+  transition: all .3s linear;
+}
+nav ul li :hover{
+  color: white;
+  background-color: #D92B45;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.checkbtn{
+  line-height: 80px;
+  font-size: 30px;
+  float: right;
+  color: rgb(23, 2, 2);
+ margin-right: 40px;
+ margin-top: 20px;
+display: none;
+
+}
+/* #bars{
+  display: none;
+} */
+@media (max-width:850px){
+  .checkbtn{
+      display: block;
+      color: white;
+      
+      transform: translate(-35vw,-48px);
   }
+  .getintouch{
+    
+      flex-direction: column;
+     
+    
+    }
+   
+  ul{
+      position: absolute;
+      height: auto;
+      background: white;
+      width: 100%;
+      top: 120px;
+      display: flex;
+      flex-wrap: wrap;
+      left: -100%;
+      justify-content: space-between;
+      flex-direction: row;
+      text-align: center;
+      transition: all .5s;
+  }
+  nav ul li{
+      display: block;
+      line-height: 60px;
+      color: black;
+      width: 80%;
+      font-size: 12px;
+  }
+  nav ul li a{
+    color: black;
+  }
+
+  #bars:checked~ul{
+      left: 0;
+  }
+.navtoggle{
+  left: 0
+}
+.headline img{
+  height: auto;
+  width: 80vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.active{
+  color: white;
+  background-color: #D92B45;
+}
+/* Homepagecss */
+.homepage{
+  background-image: url('./assets/images/charity0.jpg');
+ width: 100%;
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: white;
+  flex-direction: column;
+}
+.homepage h1{
+  font-size: 30px;
+  font-family: 'Audiowide', cursive;
+  text-align: center;
+}
+.callandinvolve{
+display: flex;
+flex-direction: row;
+gap: 20px;
+
+font-family: 'Libre Franklin', sans-serif;
+}
+.call{
+  background-color:#0E8844 ;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 100px;
+}
+.callicon{
+  transform: translateY(5px);
+}
+.involve{
+  background-color:#A9CF40 ;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 100px;
+
+}
+.involveicon{
+  transform: translateY(5px);
+}
+/* news */
+.newssection{
+  background-color: white;
+  padding: 20px 0;
+  width: 100vw;
+}
+.news{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+gap:40px;
+}
+.newsitem{
+  width: 320px;
+  min-height: 300px;
+  box-shadow: 5px 5px 10px;
+}
+.news img{
+  width: 320px;
+  height: 200px;
+}
+.newshead{
+  text-align: center;
+  
+  font-size: 30px;
+ padding: 20px 0px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+.category{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+.readmore{
+  font-size: 15px;
+  color: #369536;
+  font-weight: bold;
+}
+.newstext{
+  padding: 5px 5px;
+}
+/* our mission */
+.mission{
+  background-color: #FFFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mission h1{
+  text-align: center;
+  color:#369536;
+  font-size: 30px;
+ padding: 20px 0px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.mission p{
+  width: 500px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+}
+.vission{
+  background-color: #FFFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.vission h1{
+  text-align: center;
+  color:#369536;
+  font-size: 30px;
+ padding: 20px 0px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.vission p{
+  width: 600px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+
+}
+/* getintouh */
+.getintouch{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0px;
+  gap: 20px;
+}
+.logosection img{
+  width: 400px;
+  height: 200px;
+}
+.logosection{
+  border: 8px solid grey;
+  width: 40%;
+  height: 300px;
+}
+.social{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.address{
+  width: 40%;
   color: white;
 }
+.address h1{
+  font-family: 'Vollkorn', serif;
+  font-size: 40px;
+}
+.address .head{
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
+}
+.detail{
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: 30px;
+}
+.helpinghand{
+  height: 30vh;
+  background-color: #0D7E42;
+}
+.helpinghand h1{
+ font-family: 'Vollkorn', serif;
+font-size: 44px;
+color: white;
+text-align: center;
+padding-top: 20px;
+}
+.callbuttom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.calls{
+  background-color:white ;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 100px;
+}
+.footer{
+  background-color: black;
+  color: white;
+  height: 50px;
+  text-align: center;
 
-.App-link {
-  color: #61dafb;
+}
+.footer h3{
+  padding: 5px 0;
+}
+/* Register */
+.register{
+  min-height: 100vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form{
+  width: 40%;
+  background-color: white;
+  padding: 10px 0 10px 40px;
+  border-radius: 15px;
+  height: auto;
+  margin-bottom: 80px;
+}
+.submit{
+  width: 80px;
+  padding: 4px 8px;
+  background-color: blue;
+  color: white;
+  border-radius: 30px;
+ cursor: pointer;
+  border: none;
+}
+.submitdiv{
+  display: flex;
+  flex-direction: row;
+ 
+  
+}
+.refill{
+  width: 80px;
+ padding-left: 20px;
+
+  background-color: rgba(255, 98, 0, 0.819);
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  margin-left: 100px; 
+}
+.form h2{
+  font-family: 'Vollkorn', serif;
+  font-size: 24px;
+}
+.register img{
+width: 50%;
+height:200px;
+}
+.img{
+  display: grid;
+  place-items: center;
+}
+/* Login */
+.loginsubmit{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.tohome{
+  margin-left: 120px;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width:850px) {
+.getintouch{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logosection img{
+  width: 92%;
+  height: auto;
+}
+.logosection{
+  border: 8px solid grey;
+  width: 80%;
+  height: auto;
+}
+.newsitem{
+  width:70%;
+  min-height: 300px;
+  box-shadow: 5px 5px 10px;
+}
+.news img{
+  width: 100%;
+  height: 200px;
+}
+.form{
+  width: 90%;
+  padding: 1px 2px;
+ margin-top: 50px;
+ height: auto;
+}
+
+.register{
+  min-height: 50vh;
+ 
+}
+.register img{
+  height: auto;
+  width: 80%;
+}
+.img{
+  
+  width: 100vw;
+  height: 15vh;
+  
+}
+.form h2{
+  font-size: 20px;
+  margin: 20px 10px;
+}
+.submit{
+  width: 80px;
+  padding: 4px 8px;
+  background-color: blue;
+  color: white;
+  border-radius: 30px;
+ cursor: pointer;
+  border: none;
+  margin: 10px 20px;
+}
+.loginsubmit{
+  margin-left: 20px;
+}
+.loginsubmit p{
+  margin-top: 10px;
+}
+.mission p{
+  width: 80%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+.vission p{
+  width: 80%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+
+}
+
+.callandinvolve{
+  padding: 2px 10px;
+  flex-direction: column;
+}
+.address{
+  width: 80%;
+}
+.callbuttom{
+ 
+  flex-direction: column;
+ 
+  justify-content: center;
+  align-items: center;
+
+}
+.helpinghand{
+  height: auto;
+  padding-bottom: 20px;
+}
+.helpinghand p{
+  width: 80%;
+}
+.homepage h1{
+  padding: 0px 20px;
+
+}
+.submitdiv{
+ width: 80%;
+ padding: 0px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 }
