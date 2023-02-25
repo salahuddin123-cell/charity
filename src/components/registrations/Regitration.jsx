@@ -69,11 +69,11 @@ const Regitration = () => {
     handleNext();
     if (membership != null) {
       await axios
-      .post("http://localhost:8000/register/new", data)
+      .post("https://charity-cnyj.onrender.com/register/new", data)
       .then((res) => {
         if (res.status === 200) {
          alert('Welcome ,you have successfully registered.')
-           axios.post("http://localhost:8000/sendloginid",{Email:data.Email})
+           axios.post("https://charity-cnyj.onrender.com/sendloginid",{Email:data.Email})
           .then((res2)=>{
             
               console.log("mail sent")

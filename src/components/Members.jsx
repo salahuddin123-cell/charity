@@ -83,7 +83,7 @@ const user=useContext(UserContext);
     useEffect(() => {
         const fetchdata=async()=>{
             await axios
-            .get("http://localhost:8000/members")
+            .get("https://charity-cnyj.onrender.com/members")
             .then((res) => {
               if (res.status === 200) {
                 setdata(res.data)
