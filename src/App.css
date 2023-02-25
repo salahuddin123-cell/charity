@@ -431,6 +431,14 @@ height:200px;
   margin-left: 120px;
   text-decoration: none;
 }
+.members{
+  background:white ;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+    width:100%
+}
 
 @media (max-width:850px) {
 .getintouch{

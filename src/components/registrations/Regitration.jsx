@@ -9,10 +9,10 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import axios from "axios";
 import { FormControlLabel } from "@material-ui/core";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -27,12 +27,12 @@ const MenuProps = {
 
 const styles = {
   drawerWidth: {
-    width: '50%',
-    '@media (min-width: 780px)': {
-      width: '80%'
-    }
-  }
-}
+    width: "50%",
+    "@media (min-width: 780px)": {
+      width: "80%",
+    },
+  },
+};
 const names = [
   "Oliver Hansen",
   "Van Henry",
@@ -60,44 +60,36 @@ const Regitration = () => {
   const [stipendget, setstipend] = useState(null);
   const [membership, setmembership] = useState(null);
   const [personName, setPersonName] = React.useState([]);
- 
-
-
 
   const onSubmit = async (data) => {
-
     handleNext();
     if (membership != null) {
       await axios
-      .post("https://charity-cnyj.onrender.com/register/new", data)
-      .then((res) => {
-        if (res.status === 200) {
-         alert('Welcome ,you have successfully registered.')
-           axios.post("https://charity-cnyj.onrender.com/sendloginid",{Email:data.Email})
-          .then((res2)=>{
-            
-              console.log("mail sent")
-            
-          })
-          navigate("/")
-
-        } 
-        else Promise.reject();
-      })
-      .catch((err) => console.log(err));
-    //     setFormValues('')
-   
+        .post("https://charity-cnyj.onrender.com/register/new", data)
+        .then((res) => {
+          if (res.status === 200) {
+            alert("Welcome ,you have successfully registered.");
+            axios
+              .post("https://charity-cnyj.onrender.com/sendloginid", {
+                Email: data.Email,
+              })
+              .then((res2) => {
+                console.log("mail sent");
+              });
+            navigate("/");
+          } else Promise.reject();
+        })
+        .catch((err) => console.log(err));
+      //     setFormValues('')
     }
   };
 
-  
-
-const refill=()=>{
-  setcategory(1)
-  setstipend(null)
-  setmembership(null)
-  reset()
-}
+  const refill = () => {
+    setcategory(1);
+    setstipend(null);
+    setmembership(null);
+    reset();
+  };
 
   const handleNext = () => {
     let category = watch("Category");
@@ -140,7 +132,7 @@ const refill=()=>{
   }, []);
 
   return (
-    <div className="register" >
+    <div className="register">
       <div className="img">
         <img src="/img/trustlogo.jpg" alt="notfound" />
       </div>
@@ -151,9 +143,13 @@ const refill=()=>{
             <Box
               component="form"
               sx={{
-                "& > :not(style)": { m: 1, width: "50ch",'@media (max-width: 820px)': {
-                  width: '35ch'
-                } },
+                "& > :not(style)": {
+                  m: 1,
+                  width: "50ch",
+                  "@media (max-width: 820px)": {
+                    width: "35ch",
+                  },
+                },
               }}
               noValidate
               autoComplete="off"
@@ -216,11 +212,11 @@ const refill=()=>{
                   helperText={errors.MobileNumber?.message}
                 />
               </FormControl>
-              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">Sex</InputLabel>
+              <FormControl sx={{ m: 1, minWidth: 120 }} >
+                <InputLabel >Sex</InputLabel>
+              
                 <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
+               autoWidth
                   error={errors.Sex}
                   label="Sex"
                   defaultValue="Male"
@@ -230,6 +226,8 @@ const refill=()=>{
                   <MenuItem value="Male">Male</MenuItem>
                   <MenuItem value="Female">Female</MenuItem>
                 </Select>
+                
+             
               </FormControl>
 
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -356,9 +354,13 @@ const refill=()=>{
             <Box
               component="form"
               sx={{
-                "& > :not(style)": { m: 1, width: "50ch" ,'@media (max-width: 820px)': {
-                  width: '35ch'
-                }},
+                "& > :not(style)": {
+                  m: 1,
+                  width: "50ch",
+                  "@media (max-width: 820px)": {
+                    width: "35ch",
+                  },
+                },
               }}
               noValidate
               autoComplete="off"
@@ -534,13 +536,16 @@ const refill=()=>{
             )}
           {membership != null && (
             <>
-            
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "50ch",'@media (max-width: 820px)': {
-                    width: '35ch'
-                  } },
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "50ch",
+                    "@media (max-width: 820px)": {
+                      width: "35ch",
+                    },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
@@ -549,47 +554,53 @@ const refill=()=>{
                 <FormControlLabel
                   control={
                     <Checkbox
-                    style={{color:errors.iammuslim&&'red'}}
-                      {...register('iammuslim',{required:'this field is required'})}
+                      style={{ color: errors.iammuslim && "red" }}
+                      {...register("iammuslim", {
+                        required: "this field is required",
+                      })}
                       value="1.I am a Muslim by faith, Alhamdulillah."
                       error={errors.iammuslim}
                     />
                   }
                   label="1.I am a Muslim by faith, Alhamdulillah."
                 />
-             
-                     <FormControlLabel
+
+                <FormControlLabel
                   control={
                     <Checkbox
-                    style={{color:errors.careofummah&&'red'}}
-                    {...register('careofummah',{required:'this field is required'})}
+                      style={{ color: errors.careofummah && "red" }}
+                      {...register("careofummah", {
+                        required: "this field is required",
+                      })}
                       value="2. My intention of joining ‘The Life Care Trust’ is to serve the Ummah, only for the sake of Allah Subhanahu Wa Ta'ala."
                     />
                   }
                   label="2. My intention of joining ‘The Life Care Trust’ is to serve the Ummah, only for the sake of Allah Subhanahu Wa Ta'ala."
                 />
-                     <FormControlLabel
+                <FormControlLabel
                   control={
                     <Checkbox
-                    style={{color:errors.obeyrules&&'red'}}
-                    {...register('obeyrules',{required:'this field is required'})}
+                      style={{ color: errors.obeyrules && "red" }}
+                      {...register("obeyrules", {
+                        required: "this field is required",
+                      })}
                       value="3. I will abide by the rules and regulations of ‘The Life Care Trust’."
                     />
                   }
                   label="3. I will abide by the rules and regulations of ‘The Life Care Trust’."
                 />
-                     <FormControlLabel
+                <FormControlLabel
                   control={
                     <Checkbox
-                    style={{color:errors.noobjection&&'red'}}
-                    {...register('noobjection',{required:'this field is required'})}
+                      style={{ color: errors.noobjection && "red" }}
+                      {...register("noobjection", {
+                        required: "this field is required",
+                      })}
                       value="4. I will not object any decision taken by  ‘The Life Care Trust’ as long as it is not violating the Shariah."
                     />
                   }
                   label="4. I will not object any decision taken by  ‘The Life Care Trust’ as long as it is not violating the Shariah."
                 />
-                
-             
               </Box>
             </>
           )}
@@ -600,9 +611,13 @@ const refill=()=>{
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "50ch",'@media (max-width: 820px)': {
-                    width: '35ch'
-                  } },
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "50ch",
+                    "@media (max-width: 820px)": {
+                      width: "35ch",
+                    },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
@@ -705,9 +720,13 @@ const refill=()=>{
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "50ch" ,'@media (max-width: 820px)': {
-                    width: '35ch'
-                  }},
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "50ch",
+                    "@media (max-width: 820px)": {
+                      width: "35ch",
+                    },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
@@ -811,9 +830,13 @@ const refill=()=>{
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "50ch",'@media (max-width: 820px)': {
-                    width: '35ch'
-                  } },
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "50ch",
+                    "@media (max-width: 820px)": {
+                      width: "35ch",
+                    },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
@@ -933,9 +956,13 @@ const refill=()=>{
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "50ch",'@media (max-width: 820px)': {
-                    width: '35ch'
-                  } },
+                  "& > :not(style)": {
+                    m: 1,
+                    width: "50ch",
+                    "@media (max-width: 820px)": {
+                      width: "35ch",
+                    },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
@@ -1041,15 +1068,23 @@ const refill=()=>{
                 </div>
               </Box>
             )}
-         <div className="submitdiv">
-         <button className="submit" type="submit">
-            {membership == null ? "next" : "submit"}
-          </button>
-         {catergory!=1 &&<a className="refill" onClick={refill}>reset</a>}
-         </div>
-        
-         <br />
-         <a className="tohome"><Link style={{textDecoration:'none'}} to="/">Back to home page</Link></a>
+          <div className="submitdiv">
+            <button className="submit" type="submit">
+              {membership == null ? "next" : "submit"}
+            </button>
+            {catergory != 1 && (
+              <a className="refill" onClick={refill}>
+                reset
+              </a>
+            )}
+          </div>
+
+          <br />
+          <a className="tohome">
+            <Link style={{ textDecoration: "none" }} to="/">
+              Back to home page
+            </Link>
+          </a>
         </form>
       </div>
     </div>
