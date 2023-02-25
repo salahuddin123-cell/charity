@@ -101,7 +101,7 @@ const user=useContext(UserContext);
 
   return (
     <Layout1>
-    <div style={{background:"white",minHeight:"100vh",display:"flex",justifyContent:"center" }}>
+    <div>
       
 <div style={{ height: '60vh',marginTop:"20px", width: '80%',overflowX:'scroll' }}>
       <DataGrid rows={data} columns={columns}  getRowId={(row) => row._id} />
