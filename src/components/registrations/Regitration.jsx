@@ -365,7 +365,7 @@ const Regitration = () => {
                 fullWidth
                 error={errors.Course}
                 {...register("Course", { required: "This field is required" })}
-                label="Please mention your course"
+                label="Please mention your course (like BCA/BBA/B.TECH)"
                 helperText={errors.Course?.message}
                 variant="outlined"
               />
@@ -391,7 +391,7 @@ const Regitration = () => {
               <div>
                 <fieldset style={{ border: "none" }}>
                   <legend>
-                    Which membership scheme do you want to opt for?
+                    Which membership scheme do you want to opt for(monthy in rupees)?
                   </legend>
 
                   <div>
@@ -455,7 +455,7 @@ const Regitration = () => {
               <div>
                 <fieldset style={{ border: "none" }}>
                   <legend>
-                    Which membership scheme do you want to opt for?
+                    Which membership scheme do you want to opt for(monthly in rupees)?
                   </legend>
                   <div>
                     <input
@@ -648,7 +648,7 @@ const Regitration = () => {
                 <div>
                   <fieldset style={{ border: "none" }}>
                     <legend>
-                      Which membership scheme do you want to opt for?
+                      Which membership scheme do you want to opt for(monthy in rupees)?
                     </legend>
                     <div>
                       <input
@@ -757,7 +757,7 @@ const Regitration = () => {
                 <div>
                   <fieldset style={{ border: "none" }}>
                     <legend>
-                      Which membership scheme do you want to opt for?
+                      Which membership scheme do you want to opt for(monthy in rupees)?
                     </legend>
 
                     <div>
@@ -867,7 +867,7 @@ const Regitration = () => {
                 <div>
                   <fieldset style={{ border: "none" }}>
                     <legend>
-                      Which membership scheme do you want to opt for?
+                      Which membership scheme do you want to opt for(monthy in rupees)?
                     </legend>
 
                     <div>
@@ -993,7 +993,7 @@ const Regitration = () => {
                 <div>
                   <fieldset style={{ border: "none" }}>
                     <legend>
-                      Which membership scheme do you want to opt for?
+                      Which membership scheme do you want to opt for(monthy in rupees)?
                     </legend>
 
                     <div>
@@ -1051,7 +1051,7 @@ const Regitration = () => {
                         value="More than 1000"
                         {...register("Membershipscheme")}
                       />
-                      <label for="dewey">More than 2000</label>
+                      <label for="dewey">More than 1000</label>
                     </div>
                   </fieldset>
                 </div>
