@@ -15,7 +15,7 @@ const Layout1 = ({children}) => {
     useEffect(() => {
    
     if(token){
-      setloggedin(true)
+      user.setactivetab(100)
     }else{
       setloggedin(false)
     }
@@ -26,14 +26,14 @@ const Layout1 = ({children}) => {
            <div className="headline">
              <img src="/img/trustlogo.jpg" alt="notfound" />
            </div>
-     <nav>
+     <nav >
             
              <label for="bars" onClick={()=>setnavtoggle(!navtoggle)} className="checkbtn">
               {navtoggle?<CloseIcon fontSize="large"/>:<DehazeIcon fontSize="large"/>} 
              </label>
       
    
-             <ul className={navtoggle ? 'navtoggle':""}>
+             <ul style={{zIndex:2}} className={navtoggle ? 'navtoggle':""}>
              <li >
                  <a className={user.activetab==1 && 'active'} onClick={()=>{user.setactivetab(1);navigate("/")}}>Home</a>
                </li>
