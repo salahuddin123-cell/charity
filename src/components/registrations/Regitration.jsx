@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 import Checkbox from "@mui/material/Checkbox";
 import toast, { Toaster } from "react-hot-toast";
 
+
+
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -212,10 +214,19 @@ const Regitration = () => {
                   helperText={errors.MobileNumber?.message}
                 />
               </FormControl>
-              <FormControl sx={{ m: 1, minWidth: 120 }} >
-                <InputLabel >Sex</InputLabel>
+              <FormControl >
+               <div className="select-wrapper">
+               <select 
+              placeholder="Sex"
               
-                <Select
+                  {...register("Sex", { required: "This field is required" })} >
+                    <option selected value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                  <label>Sex</label>
+               </div>
+             
+                {/* <Select
                autoWidth
                   error={errors.Sex}
                   label="Sex"
@@ -225,28 +236,25 @@ const Regitration = () => {
                 >
                   <MenuItem value="Male">Male</MenuItem>
                   <MenuItem value="Female">Female</MenuItem>
-                </Select>
+                </Select> */}
                 
-             
+           
               </FormControl>
 
-              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">Are you married?</InputLabel>
-                <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
-                  error={errors.Married}
-                  label="Are you married?"
-                  defaultValue="Yes"
-                  {...register("Married", {
-                    required: "This field is required",
-                  })}
-                  helperText={errors.Married?.message}
-                >
-                  <MenuItem value="Yes">Yes</MenuItem>
-                  <MenuItem value="No">No</MenuItem>
-                </Select>
+              <FormControl sx={{ m: 1, minWidth: 80 }}>
+              <div className="select-wrapper">
+               <select 
+              placeholder="Sex"
+              
+                  {...register("Married", { required: "This field is required" })} >
+           <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                  <label>Are you married?</label>
+               </div>
+            
               </FormControl>
+ 
 
               <TextField
                 id="outlined-basic"
@@ -298,55 +306,43 @@ const Regitration = () => {
                 variant="outlined"
               />
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">
-                  Do you want to be an Active volunteer?
-                </InputLabel>
-                <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
-                  defaultValue="Yes"
-                  error={errors.ActiveVolunteer}
-                  label="Do you want to be an Active volunteer?"
-                  {...register("ActiveVolunteer", {
-                    required: "This field is required",
-                  })}
-                  helperText={errors.ActiveVolunteer?.message}
-                >
-                  <MenuItem value="Yes">Yes</MenuItem>
-                  <MenuItem value="No">No</MenuItem>
-                </Select>
+              <div className="select-wrapper">
+               <select 
+              placeholder="Sex"
+              
+                  {...register("ActiveVolunteer", { required: "This field is required" })} >
+           <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                  <label>  Do you want to be an Active volunteer?</label>
+               </div>
+          
               </FormControl>
 
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">
-                  Which category describe you best?
-                </InputLabel>
-                <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
-                  error={errors.Category}
-                  defaultValue="I am a student"
-                  label="Which category describe you best?"
-                  {...register("Category", {
-                    required: "This field is required",
-                  })}
-                  helperText={errors.Category?.message}
-                >
-                  <MenuItem value="I am a student">I am a student</MenuItem>
-                  <MenuItem value="I am an emoployee">
+              <div className="select-wrapper">
+               <select 
+             
+              
+                  {...register("Category", { required: "This field is required" })} >
+      <option value="I am a student">I am a student</option>
+                  <option value="I am an emoployee">
                     I am an emoployee
-                  </MenuItem>
-                  <MenuItem value="I am a Businessman">
+                  </option>
+                  <option value="I am a Businessman">
                     I am a Businessman
-                  </MenuItem>
-                  <MenuItem value="I am neither employess nor Businessman I have other source of income">
+                  </option>
+                  <option value="I am neither employess nor Businessman I have other source of income">
                     I am neither employess nor Businessman I have other source
                     of income
-                  </MenuItem>
-                  <MenuItem value="I am not a student and I am not earning">
+                  </option>
+                  <option value="I am not a student and I am not earning">
                     I am not a student and I am not earning
-                  </MenuItem>
-                </Select>
+                  </option>
+                  </select>
+                  <label>  Which category describe you best?</label>
+               </div>
+                
               </FormControl>
             </Box>
           )}
@@ -376,23 +372,17 @@ const Regitration = () => {
               />
 
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">
-                  Are you getting stipend/fellowship on monthly basis?
-                </InputLabel>
-                <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
-                  label="Are you getting stipend/fellowship on monthly basis?"
-                  error={errors.stipendget}
-                  {...register("stipendget", {
-                    required: "This field is required",
-                  })}
-                  helperText={errors.stipendget?.message}
-                  defaultValue="Yes"
-                >
-                  <MenuItem value="Yes">Yes</MenuItem>
-                  <MenuItem value="No">No</MenuItem>
-                </Select>
+              <div className="select-wrapper">
+               <select 
+             
+              
+                  {...register("stipendget", { required: "This field is required" })} >
+           <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                  <label> Are you getting stipend/fellowship on monthly basis?</label>
+               </div>
+                
               </FormControl>
             </Box>
           )}

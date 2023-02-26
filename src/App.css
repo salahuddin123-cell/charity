@@ -554,3 +554,41 @@ height:200px;
 }
 
 }
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+
+  font-family: Arial, sans-serif;
+}
+
+.select-wrapper label {
+  position: absolute;
+  top: -1em;
+  left: 1em;
+  padding: 0 0.5em;
+  background-color: #fff;
+  color: rgba(128, 128, 128, 0.854);
+  font-size: 0.8em;
+  pointer-events: none;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  height: fit-content;
+  background-color: white;
+  border: rgba(128, 128, 128, 0.296) 1px solid ;
+  
+  appearance: none;
+}
+
+.select-wrapper select:focus {
+  outline: none;
+}
+
+.select-wrapper select:hover {
+  cursor: pointer;
+}
