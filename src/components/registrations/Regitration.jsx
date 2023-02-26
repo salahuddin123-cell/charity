@@ -185,20 +185,19 @@ const Regitration = () => {
                 helperText={errors.FullName?.message}
               />
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small">Age</InputLabel>
-                <Select
-                  labelId="demo-select-small"
-                  id="demo-select-small"
-                  error={errors.Age}
-                  label="Age"
-                  {...register("Age", { required: "This field is required" })}
-                  helperText={errors.Age?.message}
-                  defaultValue={20}
-                >
-                  {age?.map((e, i) => {
-                    return <MenuItem value={e}>{e}</MenuItem>;
+              <div className="select-wrapper">
+               <select 
+              placeholder="Age"
+             
+                  {...register("Age", { required: "This field is required" })} >
+                  <option selected value='21'>21</option>
+                    {age?.map((e, i) => {
+                    return <option value={e}>{e}</option>;
                   })}
-                </Select>
+                  </select>
+                  <label>Age</label>
+               </div>
+             
               </FormControl>
               <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <TextField
